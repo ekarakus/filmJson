@@ -1,4 +1,7 @@
+using System.ComponentModel.DataAnnotations;
+
 public class Film{
+    [Required(ErrorMessage ="Ad boş bırakılamaz")]
     public string Ad { get; set; }
     public double Puan { get; set; }
     public string Yonetmen { get; set; }

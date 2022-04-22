@@ -1,12 +1,41 @@
 @model Film
 <form asp-action="Ekle" asp-controller="Filmler" method="post">
-    <input asp-for="Ad"/>
-    <span asp-validation-for="Ad" class="text-danger"></span>
-    <input asp-for="Puan"/>
-    <span asp-validation-for="Puan" class="text-danger"></span>
-    <input asp-for="YapimYili"/>
-    <span asp-validation-for="YapimYili" class="text-danger"></span>
-    <input asp-for="Yonetmen"/>
-    <span asp-validation-for="Yonetmen" class="text-danger"></span>
-    <button type="submit"></button>
+   
+    <div class="row mt-2">
+        <div class="col-3">
+            <label asp-for="Ad"></label>
+        </div>
+        <div class="col-9">
+             <input asp-for="Ad"/>
+             <span asp-validation-for="Ad" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col-3">
+            <label asp-for="Yonetmen"></label>
+        </div>
+        <div class="col-9">
+             <input asp-for="Yonetmen"/>
+             <span asp-validation-for="Yonetmen" class="text-danger"></span>
+        </div>
+    </div>
+     <div class="row mt-2">
+        <div class="col-3">
+            <label asp-for="Puan"></label>
+        </div>
+        <div class="col-9">
+             <input asp-for="Puan"/>
+             <span asp-validation-for="Puan" class="text-danger"></span>
+        </div>
+    </div>
+     <div class="row mt-2">
+        <div class="col-3">
+            <label asp-for="YapimYili"></label>
+        </div>
+        <div class="col-9">
+             <input asp-for="YapimYili"/>
+             <span asp-validation-for="YapimYili" class="text-danger"></span>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-success">Kaydet</button>
 </form>
