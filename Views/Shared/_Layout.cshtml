@@ -23,7 +23,10 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Giriş</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark"  asp-controller="Filmler" asp-action="Index">Filmler</a>
+                            <a class="nav-link text-dark"  asp-controller="Filmler" asp-action="Index">Filmler Mvc Liste</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark"  asp-controller="Filmler" asp-action="JsonIndex">Filmler Json Liste</a>
                         </li>
                     </ul>
                 </div>
@@ -44,6 +47,7 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <!-- scriptler buraya  gelecek-->
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
