@@ -1,1 +1,12 @@
-merhaba televole
+@model List<Film>
+<div id="liste">
+    @foreach (var x in Model)
+    {
+         <div class="row">
+            <div class="col-5">@x.Ad</div>
+            <div class="col-5">@x.Yonetmen</div>
+            <div class="col-1">@x.YapimYili</div>
+            <div class="col-1">@x.Puan</div>
+        </div>
+    }
+</div>

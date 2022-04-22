@@ -3,7 +3,10 @@ using Microsoft.AspNetCore.Mvc;
 using jsonOrnek.Models;
 public class FilmlerController : Controller
 {
-    public IActionResult Index(){
+     public IActionResult Index(){
+        return View(Depo.Liste);
+    }
+    public IActionResult JsonIndex(){
         return View();
     }
 

@@ -1,0 +1,30 @@
+<div id="liste">
+<img style="margin: 0 auto;display:block"
+width="100"
+src="https://raw.githubusercontent.com/Codelessly/FlutterLoadingGIFs/master/packages/cupertino_activity_indicator_square_medium.gif"/>
+</div>
+
+@section Scripts{
+<script>
+let yukle=()=>{
+    fetch("/filmler/jsonliste")
+    .then(gelen=>gelen.json())
+    .then(veri=>{
+        
+        const str= veri.map(x=>{return `
+        <div class="row">
+            <div class="col-5">${x.ad}</div>
+            <div class="col-5">${x.yonetmen}</div>
+            <div class="col-1">${x.yapimYili}</div>
+            <div class="col-1">${x.puan}</div>
+        </div>
+        `        
+        }).join("");
+        $("#liste").html(str);
+    });
+}
+$(document).ready(function(){
+    setTimeout(yukle,500);
+});
+</script>
+}
