@@ -1,0 +1,12 @@
+@model Film
+<form asp-action="Ekle" asp-controller="Filmler" method="post">
+    <input asp-for="Ad"/>
+    <span asp-validation-for="Ad" class="text-danger"></span>
+    <input asp-for="Puan"/>
+    <span asp-validation-for="Puan" class="text-danger"></span>
+    <input asp-for="YapimYili"/>
+    <span asp-validation-for="YapimYili" class="text-danger"></span>
+    <input asp-for="Yonetmen"/>
+    <span asp-validation-for="Yonetmen" class="text-danger"></span>
+    <button type="submit"></button>
+</form>
