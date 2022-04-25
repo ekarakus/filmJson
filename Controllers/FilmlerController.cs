@@ -25,6 +25,13 @@ public class FilmlerController : Controller
     }
 
     public IActionResult JsonListe(){
+
         return Json(Depo.Liste);
+    }
+    public IActionResult Sil(string id){ 
+    var s=new sonucModel();
+    s.mesaj="hata  oluştu x905hatası";
+    s.sonuc=false;
+    return Json(s);
     }
 }

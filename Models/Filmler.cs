@@ -2,6 +2,8 @@ using System.ComponentModel.DataAnnotations;
 
 public class Film{
     [Required(ErrorMessage ="Ad boş bırakılamaz")]
+    
+    public string  Id{get;set;}=Guid.NewGuid().ToString().Substring(0,5);
     public string Ad { get; set; }
     public double Puan { get; set; }
     public string Yonetmen { get; set; }

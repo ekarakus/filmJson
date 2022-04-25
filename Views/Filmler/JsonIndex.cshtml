@@ -12,11 +12,13 @@ let yukle=()=>{
     .then(veri=>{
         
         const str= veri.map(x=>{return `
-        <div class="row">
+        <div class="row mt-2">
             <div class="col-5">${x.ad}</div>
-            <div class="col-5">${x.yonetmen}</div>
+            <div class="col-4">${x.yonetmen}</div>
             <div class="col-1">${x.yapimYili}</div>
             <div class="col-1">${x.puan}</div>
+            <div class="col-1"><a data-id="${x.id}" 
+                    class="btn btn-danger btn-sm btnsil" >sil</a></div>
         </div>
         `        
         }).join("");
@@ -25,6 +27,24 @@ let yukle=()=>{
 }
 $(document).ready(function(){
     setTimeout(yukle,500);
+    $(document).on("click",".btnsil",function(e){ 
+        e.preventDefault();
+    const id=$(this).data("id");
+    fetch(`/filmler/sil?id=${id}`)
+    .then(gelen=>gelen.json())
+    .then(veri=>{ 
+        if(veri.sonuc){ 
+        alert("kayıt silindi")
+        
+        }
+        else{ 
+            alert ("kayıt silinemedi"+veri.mesaj); 
+        
+        }
+    })
+
+    
+    })
 });
 </script>
 }
