@@ -1,0 +1,54 @@
+@using jsonOrnek.Models
+@model IletisimFormuModel
+@{
+    var cevap = (sonucModel)ViewBag.Sonuc;
+    if (cevap != null)
+    {
+        if (cevap.sonuc)
+        {
+            <div class="alert alert-success">@cevap.mesaj</div>
+        }
+        else
+        {
+            <div class="alert alert-danger">@cevap.mesaj</div>
+        }
+    }
+}
+<form asp-antiforgery="true" asp-action="Iletisim" asp-controller="Home" method="post">  
+    <div class="row mb-2">
+        <div class="col-3">
+            <label asp-for="AdSoyad" class="form-label"></label>
+        </div>
+        <div class="col-9">
+            <input type="text" asp-for="AdSoyad" class="form-control">
+            <span asp-validation-for="AdSoyad" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="row mb-2">
+        <div class="col-3">
+            <label asp-for="Email" class="form-label"></label>
+        </div>
+        <div class="col-9">
+            <input type="text" asp-for="Email" class="form-control">
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="row mb-2">
+        <div class="col-3">
+            <label asp-for="Mesaj" class="form-label"></label>
+        </div>
+        <div class="col-9">
+            <textarea asp-for="Mesaj" class="form-control">
+                    </textarea>
+            <span asp-validation-for="Mesaj" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="row">
+        <button type="submit" class="btn btn-primary">Gönder</button>
+    </div>
+</form>
+</text>
+
+@section Scripts{
+<partial name="_ValidationScriptsPartial" />
+}

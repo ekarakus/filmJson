@@ -30,8 +30,17 @@ public class FilmlerController : Controller
     }
     public IActionResult Sil(string id){ 
     var s=new sonucModel();
-    s.mesaj="hata  oluştu x905hatası";
-    s.sonuc=false;
+    var aranan=Depo.Liste.Where(x=>x.Id==id)
+    .FirstOrDefault();
+    //aranana kayıt var ise
+    if(aranan!=null){
+        Depo.Liste.Remove(aranan);
+        s.mesaj="kayıt silindi";
+        s.sonuc=true;
+    }else{
+        s.sonuc=false;
+        s.mesaj="aranan kayıt bulunamadı";
+    }
     return Json(s);
     }
 }

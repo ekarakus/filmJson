@@ -35,11 +35,12 @@ $(document).ready(function(){
     .then(veri=>{ 
         if(veri.sonuc){ 
         alert("kayıt silindi")
-        
+        //window.location.href="/filmler/jsonIndex";
+        yukle();
         }
         else{ 
             alert ("kayıt silinemedi"+veri.mesaj); 
-        
+
         }
     })
 
